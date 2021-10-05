@@ -1,0 +1,27 @@
+{
+  "name": "react-gstore",
+  "version": "3.3.1",
+  "description": "",
+  "main": "dist/react-gstore.js",
+  "types": "dist/react-gstore.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [
+    "global store",
+    "react global store",
+    "store",
+    "global"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.36",
+    "typescript": "^3.9.5",
+    "tsc": "^1.20150623.0"
+  }
+}

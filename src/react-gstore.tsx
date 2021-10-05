@@ -84,21 +84,21 @@ export function createContainer<Value, State = void>(
 }
 
 export function Provider (props : ProviderProps) {
-    const rec = (props: ProviderProps) : any => {
-        if(props.containers.length === 0) {
+    const rec = (props: ProviderProps, index: number) : any => {
+        if(props.containers.length <= index) {
             return props.children
         }
-        let item : {container: Container<any, any>, initialState? : any} | undefined = props.containers.shift()
+        let item : {container: Container<any, any>, initialState? : any} | undefined = props.containers[index]
         if(!item) {
-            return rec(props)
+            return rec(props, index + 1)
         }
         return (
             <item.container.Provider initialState={item.initialState}>
-                {rec(props)}
+                {rec(props, index + 1)}
             </item.container.Provider>
         )
     }
-    return rec(props)
+    return rec(props, 0)
 }
 
 export function useContainer<Value, State = void>(
