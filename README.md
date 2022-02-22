@@ -5,6 +5,7 @@ This library is intended for creating a global store in react
 npm i react-gstore
 ```
 ## Examples
+
 ### 1 store
 ```javascript
 import React, { useState } from "react"
